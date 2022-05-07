@@ -1,0 +1,84 @@
+
+------ Screen 1 ----- movie name sent in url 
+
+method : GET
+URL: http://localhost:1091/Service1.svc/GetMovieName/Sarkaru Vaari Paata
+
+Response : 
+{
+    "GetMovieNameResult": {
+        "Responce": "RES001",
+        "Status": "SUCCESS",
+        "mList": [
+            {
+                "Actor": "Kalavathi,American Boss,Rajsekhar Aningi,Vennela Kishore,Subbaraju",
+                "ActorList": [
+                    "Kalavathi",
+                    "American Boss",
+                    "Rajsekhar Aningi",
+                    "Vennela Kishore",
+                    "Subbaraju"
+                ],
+                "ID": 1,
+                "Name": "Sarkaru Vaari Paata",
+                "Producer": "Mahesh Babu",
+                "ReleaseDate": "12-05-2022 00:00:00"
+            }
+        ]
+    }
+}
+
+----- Screen 2 ----- Add movie details, ID will auto generated
+Method : POST
+URL : http://localhost:1091/Service1.svc/AddMovie
+Request :
+{
+     "ID": null,
+    "Actor": "Akshay Kumar,Kartik Aaryan,Kiara Advani,Rajpal Yadav,Tabu",
+    "ActorList": [
+        "Akshay Kumar",
+        "Kartik Aaryan",
+        "Kiara Advani",
+        "Rajpal Yadav",
+        "Tabu"
+    ],
+    "Name": "Bhool Bhulaiyaa 2",
+    "Producer": "Anees Bazmee",
+    "ReleaseDate": "20 May 2022"
+}
+
+Response:
+{
+    "Responce": "RES001",
+    "Status": "SUCCESS",
+    "mList": null
+}
+
+
+----- Screen 3 ----- Update movie details, ID used to update the details,
+--- only pass updated data, remaining feild set as null
+Method : POST
+URL : http://localhost:1091/Service1.svc/AddMovie
+Request :
+{
+     "ID": 3,
+    "Actor": null,
+    "ActorList": [
+        "Akshay Kumar",
+        "Kartik Aaryan",
+        "Kiara Advani",
+        "Rajpal Yadav",
+        "Tabu"
+    ],
+    "Name": "Bhool Bhulaiyaa 3",
+    "Producer": null,
+    "ReleaseDate": "25 May 2022"
+}
+
+Response:
+{
+    "Responce": "RES001",
+    "Status": "SUCCESS",
+    "mList": null
+}
+
